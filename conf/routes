@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /mongo               		controllers.ProductController.mongo()
+GET     /                           controllers.Application.index()
+POST 	/product					controllers.ProductController.create()
+GET     /product                   controllers.ProductController.index()
+GET		/product/:id				controllers.ProductController.get(id:Long)
+GET		/product/json/:id			controllers.ProductController.getJson(id:Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
